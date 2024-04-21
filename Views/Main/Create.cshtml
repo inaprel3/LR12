@@ -1,0 +1,62 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model User
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Add</title>
+    <style>
+        body {
+            background-color: lightyellow;
+            font-size: 18px;
+            text-align: center;
+            padding-top: 50px;
+        }
+        form {
+            margin: 0 auto;
+            width: 50%;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add user</h2>
+
+    <form asp-action="Create" asp-controller="Main" method="post">
+        <p>
+            <label asp-for="FirstName">Name</label><br />
+            <input type="text" asp-for="FirstName" />
+        </p>
+        <p>
+            <label asp-for="LastName">Surname</label><br />
+            <input type="text" asp-for="LastName" />
+        </p>
+        <p>
+            <label asp-for="Age">Age</label><br />
+            <input type="number"  asp-for="Age" />
+        </p>
+        <p>
+            <input type="submit" value="Send" />
+        </p>
+    </form>
+</body>
+</html>
